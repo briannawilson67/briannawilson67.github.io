@@ -4,15 +4,11 @@
 
 body {
     margin: 0;
+    padding: 0;
     background-color: #20aeb8;
-    font-family: "Comic Sans MS", "Trebuchet MS", Arial, sans-serif;
     color: black;
+    font-family: "Comic Sans MS", "Trebuchet MS", Arial, sans-serif;
 }
-
-
-/* =========================
-   PAGES
-   ========================= */
 
 .page {
     width: 100%;
@@ -25,68 +21,51 @@ body {
     display: none !important;
 }
 
-
-/* =========================
-   NAME PAGE
-   ========================= */
-
 #namePage {
     text-align: left;
 }
 
 #namePage h1 {
-    font-size: 55px;
-    line-height: 0.9;
     margin: 20px 0 70px 20px;
+    font-size: 60px;
+    line-height: 0.9;
     color: black;
 }
 
 #namePage label {
-    font-size: 25px;
     margin-left: 20px;
+    font-size: 28px;
     color: black;
 }
 
 #nameInput {
-    width: 300px;
-    padding: 14px;
+    width: 350px;
     margin-left: 20px;
-
+    padding: 15px;
     background-color: white;
     color: black;
-
     border: 3px solid black;
-    border-radius: 5px;
-
+    border-radius: 6px;
     font-family: inherit;
-    font-size: 20px;
+    font-size: 25px;
     outline: none;
 }
 
 #nameInput:focus {
-    border-color: black;
+    border: 3px solid black;
 }
-
-
-/* START BUTTON */
 
 #startButton {
     display: block;
-
     margin-top: 50px;
     margin-left: 20px;
-
-    padding: 18px 65px;
-
+    padding: 20px 70px;
     background-color: white;
     color: black;
-
     border: 3px solid black;
     border-radius: 8px;
-
     font-family: inherit;
-    font-size: 28px;
-
+    font-size: 30px;
     cursor: pointer;
 }
 
@@ -94,178 +73,118 @@ body {
     background-color: #eeeeee;
 }
 
-
-/* =========================
-   QUESTION PAGE
-   ========================= */
-
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    width: 100%;
     margin-bottom: 50px;
-
-    font-size: 25px;
+    font-size: 28px;
     color: black;
 }
 
 .questionBox {
     width: 100%;
-    max-width: 900px;
-
-    margin: auto;
-
+    max-width: 1000px;
+    margin: 0 auto;
     text-align: center;
 }
 
-
-/* QUESTION */
-
 #questionText {
-    margin-bottom: 50px;
-
-    font-size: 42px;
+    margin: 0 0 55px 0;
+    font-size: 50px;
+    font-weight: bold;
     color: black;
 }
 
-
-/* =========================
-   ANSWER BOXES
-   ========================= */
-
 .answers {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 25px;
-
     width: 100%;
 }
 
 .answerButton {
-    min-height: 90px;
-
+    width: 100%;
+    min-height: 110px;
     padding: 20px;
-
     background-color: white;
     color: black;
-
-    border: 3px solid black;
-    border-radius: 5px;
-
+    border: 4px solid black;
+    border-radius: 6px;
     font-family: inherit;
-    font-size: 25px;
-
+    font-size: 32px;
+    font-weight: normal;
     cursor: pointer;
-
-    transition: background-color 0.15s;
+    transition: background-color 0.15s ease;
 }
-
-
-/* Hover */
 
 .answerButton:hover {
     background-color: #eeeeee;
 }
 
-
-/* Correct answer */
-
 .answerButton.correct {
-    background-color: #7ee787;
+    background-color: #70e58a;
     color: black;
 }
-
-
-/* Wrong answer */
 
 .answerButton.wrong {
-    background-color: #ff8585;
+    background-color: #ff7777;
     color: black;
 }
-
-
-/* =========================
-   NEXT BUTTON
-   ========================= */
 
 #nextButton {
-    margin-top: 45px;
-
-    padding: 15px 70px;
-
+    margin-top: 50px;
+    padding: 18px 75px;
     background-color: white;
     color: black;
-
-    border: 3px solid black;
+    border: 4px solid black;
     border-radius: 8px;
-
     font-family: inherit;
-    font-size: 25px;
-
+    font-size: 30px;
     cursor: pointer;
 }
-
-
-/* Disabled NEXT */
 
 #nextButton:disabled {
     background-color: #bdbdbd;
     color: #555555;
-
     cursor: not-allowed;
 }
-
-
-/* Active NEXT */
 
 #nextButton:not(:disabled):hover {
     background-color: #eeeeee;
 }
-
-
-/* =========================
-   RESULTS PAGE
-   ========================= */
 
 #resultsPage {
     text-align: center;
 }
 
 #resultsPage h1 {
-    font-size: 60px;
+    margin-top: 50px;
+    font-size: 65px;
     color: black;
 }
 
 #nameResult {
-    font-size: 30px;
+    margin-top: 50px;
+    font-size: 35px;
     color: black;
 }
 
 #scoreResult {
-    font-size: 30px;
+    font-size: 35px;
     color: black;
 }
 
-
-/* TRY AGAIN */
-
 #restartButton {
-    margin-top: 30px;
-
-    padding: 18px 50px;
-
+    margin-top: 40px;
+    padding: 20px 60px;
     background-color: white;
     color: black;
-
-    border: 3px solid black;
+    border: 4px solid black;
     border-radius: 8px;
-
     font-family: inherit;
-    font-size: 25px;
-
+    font-size: 30px;
     cursor: pointer;
 }
 
@@ -273,48 +192,62 @@ body {
     background-color: #eeeeee;
 }
 
-
-/* =========================
-   PHONE
-   ========================= */
-
 @media (max-width: 700px) {
-
     .page {
         padding: 25px;
     }
 
     #namePage h1 {
-        font-size: 45px;
         margin-left: 0;
+        font-size: 45px;
     }
 
     #namePage label {
         margin-left: 0;
+        font-size: 23px;
     }
 
     #nameInput {
         width: 100%;
         margin: 15px 0 0 0;
+        font-size: 22px;
     }
 
     #startButton {
         margin-left: 0;
+        font-size: 25px;
+    }
+
+    .header {
+        font-size: 20px;
+    }
+
+    #questionText {
+        font-size: 36px;
     }
 
     .answers {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
 
-    #questionText {
-        font-size: 32px;
+    .answerButton {
+        min-height: 85px;
+        font-size: 28px;
     }
 
-    .header {
-        font-size: 19px;
+    #nextButton {
+        font-size: 25px;
+    }
+
+    #resultsPage h1 {
+        font-size: 50px;
+    }
+
+    #nameResult,
+    #scoreResult {
+        font-size: 27px;
     }
 }
-
-
 
 
