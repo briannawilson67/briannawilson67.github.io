@@ -1,9 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Periodic Table Quiz</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
     
+    
+
+</head>
+
+<body>
+
+    <!-- START PAGE -->
+    <div id="startPage" class="page">
+        <h1>Periodic<br>Table Quiz</h1>
+
+        <div class="name-box">
+            <label>Enter name:</label>
+            <input type="text" id="nameInput">
+        </div>
+
+        <button onclick="startQuiz()" class="start-button">
+            START
+        </button>
+    </div>
+
+
+    <!-- QUESTION PAGE -->
+    <div id="quizPage" class="page hidden">
+
+        <div class="top-bar">
+            <span id="questionNumber">Question 1 of 8</span>
+            <span id="score">Score: 0</span>
+        </div>
+
+        <div class="question-box">
+
+            <h2 id="question"></h2>
+
+            <div class="answers">
+
+                <button class="answer" onclick="checkAnswer(0)" id="answer0"></button>
+
+                <button class="answer" onclick="checkAnswer(1)" id="answer1"></button>
+
+                <button class="answer" onclick="checkAnswer(2)" id="answer2"></button>
+
+                <button class="answer" onclick="checkAnswer(3)" id="answer3"></button>
+
+            </div>
+
+            <button id="nextButton" onclick="nextQuestion()" class="next-button" disabled>
+                NEXT
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESULTS PAGE -->
+    <div id="resultsPage" class="page hidden">
+
+        <h1>RESULTS</h1>
+
+        <h2 id="studentResult"></h2>
+
+        <p id="finalScore"></p>
+
+        <button onclick="restartQuiz()" class="start-button">
+            TRY AGAIN
+        </button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
