@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 50px;
     margin: 20px 25px;
     font-weight: bold;
 }
@@ -54,13 +54,13 @@ h1 {
 }
 
 .start-button {
-    width: 230px;
+    width: 150px;
     height: 80px;
     background-color: #b9f2b0;
     border: 3px solid #111;
     border-radius: 20px;
     font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
 }
 
