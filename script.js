@@ -19,26 +19,55 @@ const quizData = [
         options: ["Lead", "Lithium", "Nitrogen", "Neon"], 
         correct: 1 
     }
-];
 
-{ 
-        question: "What is Na?", 
-        options: ["Potassium", "Lithium", "Nitrogen", "Sodium"], 
-        correct: 1 
-    }
-];
 
 { 
         question: "What is Cu?", 
         options: ["Copper", "Magneisum", "Lead", "Neon"], 
         correct: 1 
     }
-];
- { 
-        question: "What is Mg?", 
-        options: ["Magenisum", "Sodium", "Zinc", "Potassium"], 
+
+  
+{
+        question: "What is Ne?", 
+        options: ["Copper", "Magneisum", "Neon", "Nitrogen"], 
         correct: 1 
+    
     }
+
+  
+{
+        question: "What is Al?", 
+        options: ["Copper", "Aluminum", "Lithium", "Neon"], 
+        correct: 1 
+    
+}
+    
+  
+{
+        question: "What is Zn?", 
+        options: ["Copper", "Magneisum", "Zinc", "Nitrogen"], 
+        correct: 1 
+    
+    }
+
+  
+{
+        question: "What is C?", 
+        options: ["Carbon", "Lithium", "Boron", "Neon"], 
+        correct: 1 
+    
+}
+ 
+
+ {
+        question: "What is Fe?", 
+        options: ["Nitrogen", "Helium", "Iron", "Potassium"], 
+        correct: 1 
+    
+    }
+
+
 let currentIndex = 0;
 let score = 0;
 let userName = "";
@@ -114,3 +143,4 @@ function resetQuiz() {
     document.getElementById("results-screen").classList.remove("active");
     document.getElementById("welcome-screen").classList.add("active");
 }
+
