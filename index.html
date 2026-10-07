@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <!-- 1. WELCOME SCREEN -->
     <div id="welcome-screen" class="screen active">
         <h1>Periodic Table Quiz</h1>
@@ -15,31 +16,25 @@
             <label for="username">Enter name: </label>
             <input type="text" id="username">
         </div>
-        <button class="start-btn" onclick="startQuiz()">START</button>
+       <button onclick="startQuiz()" class="start-btn">START</button>
     </div>
 
     <!-- 2. QUIZ SCREEN -->
     <div id="quiz-screen" class="screen">
         <div class="quiz-header">
-            <span id="progress-text">Question 1 of 4</span> 
+            <span id="progress-text">Question 1 of 10</span> 
             <span style="margin-left: 20px;">Score: <span id="score-text">0</span></span>
-        </div> 
-        <!-- Dynamic Question Text -->
+        </div>
+        
         <div id="question-text">Question text goes here...</div>
-
-      
+        
         <div class="options-container">
             <div id="opt0" class="option-box" onclick="selectOption(0)">Option 1</div>
             <div id="opt1" class="option-box" onclick="selectOption(1)">Option 2</div>
             <div id="opt2" class="option-box" onclick="selectOption(2)">Option 3</div>
             <div id="opt3" class="option-box" onclick="selectOption(3)">Option 4</div>
-             <div id="opt0" class="option-box" onclick="selectOption(0)">Option 5</div>
-             <div id="opt0" class="option-box" onclick="selectOption(0)">Option 6</div>
-             <div id="opt0" class="option-box" onclick="selectOption(0)">Option 7</div>
-             <div id="opt0" class="option-box" onclick="selectOption(0)">Option 8</div>
-             <div id="opt0" class="option-box" onclick="selectOption(0)">Option 9</div>
-             <div id="opt0" class="option-box" onclick="selectOption(0)">Option 10 </div>
         </div>
+
 
         <button class="next-btn" onclick="nextQuestion()">NEXT</button>
     </div>
@@ -55,4 +50,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
