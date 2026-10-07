@@ -1,73 +1,55 @@
 const quizData = [
     { 
         question: "What is Be?", 
-        options: ["Hydrogen", "Berlliuim", "Potassium", "Boron"], 
-        correct: 1 
+        options: ["Hydrogen", "Beryllium", "Potassium", "Boron"], 
+        correct: 1 // Beryllium is Option 2
     },
     { 
         question: "What is K?", 
-        options: ["Calcuim", "Potassium", "Carbon", "Magnesium"], 
-        correct: 1 
+        options: ["Calcium", "Potassium", "Carbon", "Magnesium"], 
+        correct: 1 // Potassium is Option 2
     },
     { 
         question: "What is He?", 
         options: ["Hydrogen", "Helium", "Magnesium", "Sodium"], 
-        correct: 1 
+        correct: 1 // Helium is Option 2
     },
     { 
         question: "What is Li?", 
         options: ["Lead", "Lithium", "Nitrogen", "Neon"], 
-        correct: 1 
-    }
-
-
-{ 
+        correct: 1 // Lithium is Option 2
+    },
+    { 
         question: "What is Cu?", 
-        options: ["Copper", "Magneisum", "Lead", "Neon"], 
-        correct: 1 
-    }
-
-  
-{
+        options: ["Copper", "Magnesium", "Lead", "Neon"], 
+        correct: 0 // Copper is Option 1 (Index 0)
+    },
+    {
         question: "What is Ne?", 
-        options: ["Copper", "Magneisum", "Neon", "Nitrogen"], 
-        correct: 1 
-    
-    }
-
-  
-{
+        options: ["Copper", "Magnesium", "Neon", "Nitrogen"], 
+        correct: 2 // Neon is Option 3 (Index 2)
+    },
+    {
         question: "What is Al?", 
-        options: ["Copper", "Aluminum", "Lithium", "Neon"], 
-        correct: 1 
-    
-}
-    
-  
-{
+        options: ["Copper", "Aluminium", "Lithium", "Neon"], 
+        correct: 1 // Aluminium is Option 2
+    },
+    {
         question: "What is Zn?", 
-        options: ["Copper", "Magneisum", "Zinc", "Nitrogen"], 
-        correct: 1 
-    
-    }
-
-  
-{
+        options: ["Copper", "Magnesium", "Zinc", "Nitrogen"], 
+        correct: 2 // Zinc is Option 3 (Index 2)
+    },
+    {
         question: "What is C?", 
         options: ["Carbon", "Lithium", "Boron", "Neon"], 
-        correct: 1 
-    
-}
- 
-
- {
+        correct: 0 // Carbon is Option 1 (Index 0)
+    },
+    {
         question: "What is Fe?", 
         options: ["Nitrogen", "Helium", "Iron", "Potassium"], 
-        correct: 1 
-    
+        correct: 2 // Iron is Option 3 (Index 2)
     }
-
-
+]; // 
 let currentIndex = 0;
 let score = 0;
 let userName = "";
@@ -99,6 +81,7 @@ function loadQuestion() {
     document.getElementById("opt2").innerText = currentData.options[2];
     document.getElementById("opt3").innerText = currentData.options[3];
 
+    // This dynamically handles your new length of 10 questions!
     document.getElementById("progress-text").innerText = `Question ${currentIndex + 1} of ${quizData.length}`;
     document.getElementById("score-text").innerText = score;
 }
@@ -129,7 +112,6 @@ function nextQuestion() {
         currentIndex++;
         loadQuestion();
     } else {
-        // Instead of a popup window, reveal your custom RESULTS screen layout
         document.getElementById("quiz-screen").classList.remove("active");
         document.getElementById("results-screen").classList.add("active");
         document.getElementById("final-score-text").innerText = `Awesome job ${userName}! You scored ${score} out of ${quizData.length}.`;
@@ -143,4 +125,9 @@ function resetQuiz() {
     document.getElementById("results-screen").classList.remove("active");
     document.getElementById("welcome-screen").classList.add("active");
 }
+
+
+
+    
+
 
