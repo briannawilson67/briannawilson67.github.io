@@ -21,6 +21,24 @@ const quizData = [
     }
 ];
 
+{ 
+        question: "What is Na?", 
+        options: ["Potassium", "Lithium", "Nitrogen", "Sodium"], 
+        correct: 1 
+    }
+];
+
+{ 
+        question: "What is Cu?", 
+        options: ["Copper", "Magneisum", "Lead", "Neon"], 
+        correct: 1 
+    }
+];
+ { 
+        question: "What is Mg?", 
+        options: ["Magenisum", "Sodium", "Zinc", "Potassium"], 
+        correct: 1 
+    }
 let currentIndex = 0;
 let score = 0;
 let userName = "";
