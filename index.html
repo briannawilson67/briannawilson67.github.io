@@ -1,82 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <title>Periodic Table Quiz</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-
+    <title>Periodic Table Quiz</title>
+    <!-- Direct link to your local styles.css file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <!-- START PAGE -->
-    <div id="startPage" class="page">
-        <h1>Periodic<br>Table Quiz</h1>
-
-        <div class="name-box">
-            <label>Enter name:</label>
-            <input type="text" id="nameInput">
+    <!-- 1. WELCOME SCREEN -->
+    <div id="welcome-screen" class="screen active">
+        <h1>Periodic Table Quiz</h1>
+        <div class="input-group">
+            <label for="username">Enter name: </label>
+            <input type="text" id="username">
         </div>
-
-        <button onclick="startQuiz()" class="start-button">
-            START
-        </button>
+        <button class="start-btn" onclick="startQuiz()">START</button>
     </div>
 
-
-    <!-- QUESTION PAGE -->
-    <div id="quizPage" class="page hidden">
-
-        <div class="top-bar">
-            <span id="questionNumber">Question 1 of 8</span>
-            <span id="score">Score: 0</span>
+    <!-- 2. QUIZ SCREEN -->
+    <div id="quiz-screen" class="screen">
+        <div class="quiz-header">
+            <span id="progress-text">Question 1 of 4</span> 
+            <span style="margin-left: 20px;">Score: <span id="score-text">0</span></span>
         </div>
 
-        <div class="question-box">
+        <!-- Dynamic Question Text -->
+        <div id="question-text">Question text goes here...</div>
 
-            <h2 id="question"></h2>
-
-            <div class="answers">
-
-                <button class="answer" onclick="checkAnswer(0)" id="answer0"></button>
-
-                <button class="answer" onclick="checkAnswer(1)" id="answer1"></button>
-
-                <button class="answer" onclick="checkAnswer(2)" id="answer2"></button>
-
-                <button class="answer" onclick="checkAnswer(3)" id="answer3"></button>
-
-            </div>
-
-            <button id="nextButton" onclick="nextQuestion()" class="next-button" disabled>
-                NEXT
-            </button>
-
+        <!-- 4 Option Boxes styled to match your wireframe plan -->
+        <div class="options-container">
+            <div id="opt0" class="option-box" onclick="selectOption(0)">Option 1</div>
+            <div id="opt1" class="option-box" onclick="selectOption(1)">Option 2</div>
+            <div id="opt2" class="option-box" onclick="selectOption(2)">Option 3</div>
+            <div id="opt3" class="option-box" onclick="selectOption(3)">Option 4</div>
         </div>
 
+        <button class="next-btn" onclick="nextQuestion()">NEXT</button>
     </div>
 
-
-    <!-- RESULTS PAGE -->
-    <div id="resultsPage" class="page hidden">
-
+    <!-- 3. RESULTS SCREEN -->
+    <div id="results-screen" class="screen">
         <h1>RESULTS</h1>
-
-        <h2 id="studentResult"></h2>
-
-        <p id="finalScore"></p>
-
-        <button onclick="restartQuiz()" class="start-button">
-            TRY AGAIN
-        </button>
-
+        <div id="final-score-text">You scored 0 out of 4!</div>
+        <button class="start-btn" style="margin-top: 30px;" onclick="resetQuiz()">PLAY AGAIN</button>
     </div>
 
-
+    <!-- Direct link to your local script.js file -->
     <script src="script.js"></script>
-
 </body>
 </html>
+
