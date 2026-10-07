@@ -15,8 +15,8 @@ body {
     margin-top: 40px;
 }
 
-.active {
-    display: block; /* Shows only the active screen */
+.screen.active {
+    display: block;
 }
 
 h1 {
@@ -107,3 +107,5 @@ input {
     font-size: 24px;
     margin-top: 10px;
 }
+
+
