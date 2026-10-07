@@ -1,237 +1,98 @@
-const questions = [
-
-    {
-        question: "What is Be?",
-        choices: [
-            "Hydrogen",
-            "Beryllium",
-            "Potassium",
-            "Boron"
-        ],
-        correct: 1
+const quizData = [
+    { 
+        question: "What is Be?", 
+        options: ["Hydrogen", "Berlliuim", "Potassium", "Boron"], 
+        correct: 1 
     },
-
-    {
-        question: "What is K?",
-        choices: [
-            "Calcium",
-            "Potassium",
-            "Carbon",
-            "Magnesium"
-        ],
-        correct: 1
+    { 
+        question: "What is K?", 
+        options: ["Calcuim", "Potassium", "Carbon", "Magnesium"], 
+        correct: 1 
     },
-
-    {
-        question: "What is He?",
-        choices: [
-            "Hydrogen",
-            "Helium",
-            "Magnesium",
-            "Sodium"
-        ],
-        correct: 1
+    { 
+        question: "What is He?", 
+        options: ["Hydrogen", "Helium", "Magnesium", "Sodium"], 
+        correct: 1 
     },
-
-    {
-        question: "What is Li?",
-        choices: [
-            "Lead",
-            "Lithium",
-            "Nitrogen",
-            "Neon"
-        ],
-        correct: 1
-    },
-
-    {
-        question: "What is Na?",
-        choices: [
-            "Sodium",
-            "Nitrogen",
-            "Neon",
-            "Nickel"
-        ],
-        correct: 0
-    },
-
-    {
-        question: "What is C?",
-        choices: [
-            "Calcium",
-            "Carbon",
-            "Chlorine",
-            "Copper"
-        ],
-        correct: 1
-    },
-
-    {
-        question: "What is O?",
-        choices: [
-            "Osmium",
-            "Oxygen",
-            "Gold",
-            "Fluorine"
-        ],
-        correct: 1
-    },
-
-    {
-        question: "What is Au?",
-        choices: [
-            "Silver",
-            "Gold",
-            "Argon",
-            "Aluminium"
-        ],
-        correct: 1
+    { 
+        question: "What is Li?", 
+        options: ["Lead", "Lithium", "Nitrogen", "Neon"], 
+        correct: 1 
     }
-
 ];
 
-
-let currentQuestion = 0;
+let currentIndex = 0;
 let score = 0;
-let studentName = "";
-let answered = false;
+let userName = "";
+let selectedAnswer = null;
 
-
-// START QUIZ
 function startQuiz() {
-
-    studentName = document.getElementById("nameInput").value;
-
-    if (studentName.trim() === "") {
-        alert("Please enter your name.");
+    userName = document.getElementById("username").value.trim();
+    
+    if (userName === "") {
+        alert("Please enter your name first!");
         return;
     }
 
-    currentQuestion = 0;
-    score = 0;
-
-    document.getElementById("startPage").classList.add("hidden");
-    document.getElementById("quizPage").classList.remove("hidden");
-
-    showQuestion();
+    document.getElementById("welcome-screen").classList.remove("active");
+    document.getElementById("quiz-screen").classList.add("active");
+    
+    loadQuestion();
 }
 
+function loadQuestion() {
+    selectedAnswer = null;
+    clearSelections();
 
-// SHOW QUESTION
-function showQuestion() {
+    const currentData = quizData[currentIndex];
+    
+    document.getElementById("question-text").innerText = currentData.question;
+    document.getElementById("opt0").innerText = currentData.options[0];
+    document.getElementById("opt1").innerText = currentData.options[1];
+    document.getElementById("opt2").innerText = currentData.options[2];
+    document.getElementById("opt3").innerText = currentData.options[3];
 
-    answered = false;
+    document.getElementById("progress-text").innerText = `Question ${currentIndex + 1} of ${quizData.length}`;
+    document.getElementById("score-text").innerText = score;
+}
 
-    const current = questions[currentQuestion];
+function selectOption(optionIndex) {
+    clearSelections();
+    selectedAnswer = optionIndex;
+    document.getElementById(`opt${optionIndex}`).classList.add("selected");
+}
 
-    document.getElementById("question").textContent =
-        current.question;
-
-    document.getElementById("questionNumber").textContent =
-        `Question ${currentQuestion + 1} of ${questions.length}`;
-
-    document.getElementById("score").textContent =
-        `Score: ${score}`;
-
-
-    // Put the four choices onto the page
+function clearSelections() {
     for (let i = 0; i < 4; i++) {
-
-        const button = document.getElementById(`answer${i}`);
-
-        button.textContent = current.choices[i];
-
-        button.classList.remove("correct");
-        button.classList.remove("wrong");
-
-        button.disabled = false;
+        document.getElementById(`opt${i}`).classList.remove("selected");
     }
-
-
-    // Disable NEXT until they answer
-    document.getElementById("nextButton").disabled = true;
 }
 
-
-// CHECK ANSWER
-function checkAnswer(selectedAnswer) {
-
-    // Don't allow another answer
-    if (answered) {
+function nextQuestion() {
+    if (selectedAnswer === null) {
+        alert("Please select an answer first!");
         return;
     }
 
-    answered = true;
-
-    const current = questions[currentQuestion];
-
-    const buttons = document.querySelectorAll(".answer");
-
-
-    if (selectedAnswer === current.correct) {
-
-        buttons[selectedAnswer].classList.add("correct");
-
+    if (selectedAnswer === quizData[currentIndex].correct) {
         score++;
-
-        document.getElementById("score").textContent =
-            `Score: ${score}`;
-
-    } else {
-
-        buttons[selectedAnswer].classList.add("wrong");
-
-        // Show the correct answer
-        buttons[current.correct].classList.add("correct");
     }
 
-
-    // Disable all answer buttons
-    buttons.forEach(button => {
-        button.disabled = true;
-    });
-
-
-    // Enable NEXT
-    document.getElementById("nextButton").disabled = false;
-}
-
-
-// NEXT QUESTION
-function nextQuestion() {
-
-    currentQuestion++;
-
-    if (currentQuestion < questions.length) {
-
-        showQuestion();
-
+    if (currentIndex < quizData.length - 1) {
+        currentIndex++;
+        loadQuestion();
     } else {
-
-        showResults();
+        // Instead of a popup window, reveal your custom RESULTS screen layout
+        document.getElementById("quiz-screen").classList.remove("active");
+        document.getElementById("results-screen").classList.add("active");
+        document.getElementById("final-score-text").innerText = `Awesome job ${userName}! You scored ${score} out of ${quizData.length}.`;
     }
 }
 
-
-// SHOW RESULTS
-function showResults() {
-
-    document.getElementById("quizPage").classList.add("hidden");
-    document.getElementById("resultsPage").classList.remove("hidden");
-
-    document.getElementById("studentResult").textContent =
-        `Well done, ${studentName}!`;
-
-    document.getElementById("finalScore").textContent =
-        `You scored ${score} out of ${questions.length}.`;
-}
-
-
-// RESTART
-function restartQuiz() {
-
-    document.getElementById("resultsPage").classList.add("hidden");
-    document.getElementById("startPage").classList.remove("hidden");
-
-    document.getElementById("nameInput").value = "";
+function resetQuiz() {
+    currentIndex = 0;
+    score = 0;
+    document.getElementById("username").value = "";
+    document.getElementById("results-screen").classList.remove("active");
+    document.getElementById("welcome-screen").classList.add("active");
 }
