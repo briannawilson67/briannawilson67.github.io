@@ -21,8 +21,7 @@ background: radial-gradient(circle,rgba(223, 63, 251, 1) 0%, rgba(70, 252, 167, 
 }
 
 h1 {
-    font-size: 40px;
-    margin-bottom: 25px;
+    font-size: 50px;
 }
 
 /* Welcome Screen Elements */
@@ -40,7 +39,7 @@ input {
 }
 
 .start-btn {
-    background-color: #eca1ac;
+    background-color: #f4f8f8;
     border: 2px solid #000;
     border-radius: 20px;
     padding: 15px 50px;
@@ -76,7 +75,7 @@ input {
     width: 100%;
     max-width: 400px;
     padding: 12px;
-    background-color: #fff;
+    background-color: #f8fcfc;
     border: 2px solid #000;
     border-radius: 4px;
     text-align: center;
@@ -88,7 +87,7 @@ input {
 
 /* Visual feedback when selected */
 .option-box.selected {
-    background-color: #f8bbd0;
+    background-color: #00FFFF;
 }
 
 .next-btn {
@@ -109,6 +108,3 @@ input {
     font-size: 24px;
     margin-top: 10px;
 }
-
-
-
