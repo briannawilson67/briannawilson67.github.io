@@ -1,5 +1,6 @@
 body {
-    background-color: #8be0f3;
+    background: #df3ffb;
+background: radial-gradient(circle,rgba(223, 63, 251, 1) 0%, rgba(70, 252, 167, 1) 100%);
     font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
     margin: 0;
     padding: 20px;
@@ -39,7 +40,7 @@ input {
 }
 
 .start-btn {
-    background-color: #b5f5b5;
+    background-color: #eca1ac;
     border: 2px solid #000;
     border-radius: 20px;
     padding: 15px 50px;
@@ -53,6 +54,7 @@ input {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 #question-text {
@@ -86,7 +88,7 @@ input {
 
 /* Visual feedback when selected */
 .option-box.selected {
-    background-color: #fffb96;
+    background-color: #f8bbd0;
 }
 
 .next-btn {
@@ -107,5 +109,6 @@ input {
     font-size: 24px;
     margin-top: 10px;
 }
+
 
 
