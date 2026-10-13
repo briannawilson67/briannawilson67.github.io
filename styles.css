@@ -50,7 +50,7 @@ input {
 
 /* Quiz Screen Elements */
 .quiz-header {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 30px;
     text-align: center;
@@ -87,7 +87,7 @@ input {
 
 /* Visual feedback when selected */
 .option-box.selected {
-    background-color: #00FFFF;
+    background-color: #CF9FFF;
 }
 
 .next-btn {
@@ -96,7 +96,7 @@ input {
     background-color: #fff;
     border: 2px solid #000;
     padding: 12px;
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
     display: block;
     margin: 0 auto;
@@ -105,6 +105,7 @@ input {
 }
 
 #final-score-text {
-    font-size: 24px;
-    margin-top: 10px;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
 }
