@@ -24,7 +24,7 @@ let answers = [
     ["H", "He", "Hy", "Ho"]
 ];
 
-let correctAnswers = ["He", "K", "Cu", "O", "Au", "Ag"];
+let correctAnswers = ["He", "K", "Cu", "O", "Au", "Ag", "Na","C", "Li","H"];
 
 let questionNumber = 0;
 let score = 0;
