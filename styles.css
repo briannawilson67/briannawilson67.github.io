@@ -1,1 +1,53 @@
+body {
+    background: #df3ffb;
+background: radial-gradient(circle,rgba(224, 17, 95) 0%, rgba(93, 63, 211) 100%);
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
 
+
+.quiz-box {
+    background-color: #ffff; 
+    width: 70%;
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+h1 {
+    color: 	#E37383;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+button {
+    background-color: #E37383;
+    border: none;
+    padding: 12px;
+    margin: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #F33A6A;
+}
+
+
+
+#options button {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+}
+
+#feedback {
+    font-weight: bold;
+}
