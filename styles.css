@@ -1,6 +1,6 @@
 body {
-    background: #df3ffb;
-background: radial-gradient(circle,rgba(224, 17, 95) 0%, rgba(93, 63, 211) 100%);
+    background: #DC143C;
+background: radial-gradient(circle,rgba(250, 170, 203) 0%, rgba(8, 143, 143) 100%);
     font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
     margin: 0;
     padding: 20px;
@@ -27,7 +27,7 @@ h2 {
 }
 
 button {
-    background-color: #E37383;
+    background-color: 	#E37383;
     border: none;
     padding: 12px;
     margin: 6px;
@@ -37,7 +37,7 @@ button {
 }
 
 button:hover {
-    background-color: #F33A6A;
+    background-color: 	#E37383;
 }
 
 
