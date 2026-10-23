@@ -9,11 +9,12 @@
 <body>
  
     <div class="quiz-box">
-
+ 
         <h1>Periodic Table Quiz</h1>
 
         <p id="intro">Test your knowledge of the elements!</p>
            <p id="author">Made by Brianna</p>
+           <!--start quiz button-->
         <button id="startButton" onclick="startQuiz()">Start Quiz</button>
 
         <div id="quiz" style="display:none;">
@@ -25,22 +26,22 @@
             <div id="options"></div>
 
             <p id="feedback"></p>
-            #This is to work the next button
+           <!--this is the next button-->
             <button id="nextButton" onclick="nextQuestion()" disabled>
                 Next Question
             </button>
 
         </div>
-            #This is for the result page
+            
         <div id="result" style="display:none;">
-            <h2>Quiz Finished!</h2>     #Tells the user that the quiz is finished
-            <p id="score"></p>
-            #Gives the user an option to play again if needed
+            <h2>Quiz Finished!</h2>     
+            <p id="score">
+             <!--restart quiz button-->
             <button onclick="restartQuiz()">Play Again</button>
         </div>
 
     </div>
-    #links to javascript
+    
     <script src="script.js"></script>
 
 </body>
